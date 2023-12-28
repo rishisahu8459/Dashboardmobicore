@@ -4,6 +4,7 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import RouterIcon from '@mui/icons-material/Router';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import SettingsIcon from '@mui/icons-material/Settings';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
 export const  SidebarData = [
     {
@@ -29,6 +30,11 @@ export const  SidebarData = [
     {
         title:"Settings",
         icon: <SettingsIcon />,
+        link:"/Home"
+    },
+    {
+        title:"Settings",
+        icon: <PeopleAltIcon />,
         link:"/Home"
     },
     

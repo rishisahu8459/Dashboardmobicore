@@ -1,32 +1,57 @@
 /* src/App.css */
 .app {
   width: 100vw;
-
   height: 100vh;
   display: flex;
-  background-color: #ffffff ;
+  
+  background-color: #ffffff;
 }
-body {
- margin: 0;
- padding: 0;
 
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
+
 .Sidebar {
   height: 95%;
-  width: 100px;
-  align-self: flex-start;
-  background-color: #7c41f5 ;
+  width: 5%;
+  min-width: 80px;
+  background-color: #7c41f5;
   padding: 5px;
+  padding-top: 50px;
   margin-left: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 30px;
-  
+  justify-content: center;
 }
-.w3-bar{
+
+.SidebarItem {
+  color: white;
+  text-align: center;
+  margin: 10px 0; /* Adjust the margin to control the vertical space between items */
+}
+
+.w3-bar {
   background-color: rgb(255, 255, 255);
   height: 50px;
   width: 90vw;
   border-radius: 20px;
+  margin-top: 10px;
   margin-left: 10px;
+  margin-right: 20px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Take up the remaining space */
+}
+
+.main-content {
+  flex: 1; /* Take up the remaining space */
+  padding: 20px;
+  margin: 20px;
+  background-color: black;
 }
