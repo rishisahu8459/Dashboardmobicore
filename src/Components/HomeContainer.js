@@ -1,17 +1,33 @@
 // src/components/HomeContainer.js
 import React from 'react';
 import "../App.css"
-
+import Paper from '@mui/material/Paper';
+import Rooms from './Rooms';
 
 const HomeContainer = () => {
   return (
     <div className='main-content'>
-      <div className='left-section'>
+      
+      <Paper className='left-section' elevation={1}>
+        <Paper  elevation={3}>
+          <div className='weather-section'>
+          <h1>Weather Widgets
+          </h1>
+          </div>
+        </Paper>
+
+        <div>
+          <Rooms/>
+        </div>
      
-      </div>
+      </Paper>
       <div className='right-section'>
-        {/* Content for the right section (40%) */}
-        <h2>Right Section (40%)</h2>
+      <Paper  elevation={3}>
+          <div className='weather-section'>
+          <h1>Weather Widgets
+          </h1>
+          </div>
+        </Paper>
       </div>
     </div>
   );

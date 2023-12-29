@@ -75,3 +75,118 @@ body {
   border: 20px; 
   border-color: black;/* Optional: Set background color */
 }
+.weather-section {
+
+  height: 200px;
+  width: 100%;
+  
+  background-color: aquamarine;
+  justify-content: center;
+  text-align: center;
+}
+.left-section {
+  flex: 65%;
+  padding: 20px;
+  background-color: #e58d8d;
+  margin-right: 10px;
+  border-radius: 20px;
+}
+
+.left-section .header {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-section .humidity,
+.left-section .temperature,
+.left-section .dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.left-section .scrollable-section {
+  height: 150px;
+  overflow-x: auto;
+  flex-direction: row; /* Change from row to column */
+  align-items: flex-start; /* Align items to the start */
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  flex-grow: 1; /* Allow the container to grow vertically */
+}
+.rooms {
+
+  margin: 10px;
+  margin-top: 20px;
+  padding: 5px;
+}
+.rooms .scrollable-section {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  align-items: center;
+}
+
+.card {
+  min-height: 120px; /* Use min-height instead of height */
+  min-width: 160px; /* Specify min-width for consistency */
+  margin-right: 10px;
+  margin-bottom: 10px; /* Add margin-bottom to create space between rows */
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 10px;
+  position: relative;
+}
+
+.status-text {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  
+}
+.color-switch {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.color-switch-text {
+  color: green;
+}
+
+.color-switch-text-off {
+  color: red;
+}
+
+.card-content {
+  
+  
+   /* Align items to the left */
+  /* Allow content to grow and push switch to the bottom */
+}
+
+.device-name {
+ position: absolute;
+ top: 80px;
+ left: 10px;
+  color: #7c41f5;
+  
+}
+
+.device-icon {
+  position: absolute;
+  top: 30px;
+ left: 50px;
+  
+}
+
+.switch-container {
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+}
