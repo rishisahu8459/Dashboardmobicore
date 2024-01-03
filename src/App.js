@@ -10,9 +10,10 @@ import HomeContainer from './Components/HomeContainer'; // Import the HomeContai
 const App = () => {
   return (
     <div className='app'>
+      
       <Sidebar />
-      <div className='content-container'>
-        <Navbar />
+      <div >
+      <Navbar/>
         <HomeContainer/> {/* Use the HomeContainer component */}
       </div>
     </div>

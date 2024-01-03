@@ -4,12 +4,13 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Autocomplete from '@mui/material/Autocomplete';
-
+import InputBase from "@mui/material/InputBase";
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import SettingsIcon from '@mui/icons-material/Settings';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import SearchIcon from "@mui/icons-material/Search";
 
 function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -44,26 +45,18 @@ function Navbar() {
   };
 
   return (
-    <div className='w3-bar' style={{ display: 'flex', alignItems: 'center' }}>
-     <Box  sx={{ flex: '1 0 60%' }}>
-        <Autocomplete
-          value={searchValue}
-          onChange={handleSearchChange}
-          options={autocompleteOptions}
-          loading={loading}
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              label="Search"
-              variant="outlined"
-              fullWidth
-              style={{ backgroundColor: '#ebeef3' }}
-            />
-          )}
-        />
+    <div className='w3-bar' >
+     <Box  display="flex" borderRadius={3} borderColor={'black'} border={1}>
+     <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
+     <IconButton type="button" sx={{ p: 1 }}>
+          <SearchIcon />
+        </IconButton>
       </Box>
 
-      {/* Settings Button */}
+
+ {/* Buttons  */}
+      <Box   display={'flex'} position={'absolute'} right={5}>
+     
       <IconButton  color="inherit" onClick={handleMenuOpen}>
         <SettingsIcon />
       </IconButton>
@@ -91,6 +84,7 @@ function Navbar() {
         <MenuItem onClick={() => handleUserChange('User2')}>User2</MenuItem>
         {/* Add more users as needed */}
       </Menu>
+      </Box>
     </div>
   );
 }

@@ -5,11 +5,11 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import DevicesIcon from '@mui/icons-material/Devices';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import Switch from '@mui/material/Switch';
-import Modal from 'react-modal';
-
+import Menu from '@mui/material/Menu';
+import WaterDropIcon from '@mui/icons-material/WaterDrop';
+import MenuItem from '@mui/material/MenuItem'; // Add this import
+import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 const mockData = {
   livingRoom: ['Refrigerator', 'Smart AC', 'Lights', 'Fan', 'Washing machine', 'Lamp', 'Air Purifier', 'TV', 'Alarm Clock'],
   bedRoom: ['Lamp', 'Air Purifier', 'TV', 'Alarm Clock'],
@@ -18,11 +18,17 @@ const mockData = {
 
 const Rooms = () => {
   const [selectedRoom, setSelectedRoom] = useState('livingRoom');
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [anchorEl, setAnchorEl] = useState(null); // Add this line
 
   const handleRoomChange = (room) => {
     setSelectedRoom(room);
-    setAnchorEl(null); // Close the dropdown menu when a room is selected
+    setSelectedCard(null);
+    handleMenuClose(); // Close the menu when a room is selected
+  };
+
+  const handleCardClick = (index) => {
+    setSelectedCard(index);
   };
 
   const handleMenuOpen = (event) => {
@@ -40,12 +46,14 @@ const Rooms = () => {
         <div className='humidity'>
           <IconButton>
             {/* Icon for humidity */}
+            <WaterDropIcon/>
           </IconButton>
           <Typography variant="body2">Humidity: 70%</Typography>
         </div>
         <div className='temperature'>
           <IconButton>
             {/* Icon for temperature */}
+            <DeviceThermostatIcon/>
           </IconButton>
           <Typography variant="body2">Temperature: 25°C</Typography>
         </div>
@@ -57,11 +65,7 @@ const Rooms = () => {
           <IconButton onClick={handleMenuOpen}>
             <ArrowDropDownIcon />
           </IconButton>
-          <Menu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleMenuClose}
-          >
+          <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
             <MenuItem onClick={() => handleRoomChange('livingRoom')}>Living Room</MenuItem>
             <MenuItem onClick={() => handleRoomChange('bedRoom')}>Bed Room</MenuItem>
             <MenuItem onClick={() => handleRoomChange('kitchen')}>Kitchen</MenuItem>
@@ -70,57 +74,47 @@ const Rooms = () => {
       </div>
       <div className='scrollable-section'>
         {mockData[selectedRoom].map((device, index) => (
-          <Card key={index} device={device} />
+          <Card
+            key={index}
+            device={device}
+            isSelected={selectedCard === index}
+            onClick={() => handleCardClick(index)}
+          />
         ))}
       </div>
     </Paper>
   );
 };
 
-const Card = ({ device }) => {
+const Card = ({ device, isSelected, onClick }) => {
   const [isSwitchOn, setSwitchOn] = useState(false);
-  const [isModalOpen, setModalOpen] = useState(false);
 
   const handleSwitchChange = () => {
     setSwitchOn(!isSwitchOn);
   };
 
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
   return (
-    <div className='card'>
+    <div
+      className={`card ${isSelected ? 'selected-card' : ''}`}
+      onClick={onClick}
+    >
       <div className='status-text' style={{ color: isSwitchOn ? 'green' : 'red' }}>
         {isSwitchOn ? 'ON' : 'OFF'}
       </div>
       <div className='card-content'>
-        <Typography variant="body2" className='device-name'>
+        <Typography variant="body2" className={`device-name ${isSelected ? 'selected-text' : ''}`}>
           {device}
         </Typography>
-        <div className='device-icon' onClick={openModal}>
+        <div className='device-icon'>
           <IconButton>
             {/* Icon based on device name */}
-            <DevicesIcon />
+            <DevicesIcon className={`device-icon ${isSelected ? 'selected-icon' : ''}`} />
           </IconButton>
         </div>
       </div>
       <div className='switch-container'>
-        <Switch checked={isSwitchOn} onChange={handleSwitchChange} />
+        <Switch  checked={isSwitchOn} onChange={handleSwitchChange} />
       </div>
-      <Modal
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-        contentLabel="Device Modal"
-      >
-        <h2>{device}</h2>
-        {/* Add more content to the modal as needed */}
-        <button onClick={closeModal}>Close Modal</button>
-      </Modal>
     </div>
   );
 };

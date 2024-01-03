@@ -1,32 +1,32 @@
 /* src/App.css */
 .app {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
   
-  background-color: #ffffff;
+  display: flex;
+  position: relative;
+  
+  
+}
+.body {
+  
+
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
 
 .Sidebar {
-  height: 95%;
-  width: 5%;
-  min-width: 80px;
+  
+  
+ 
+  color: #ffffff;
   background-color: #7c41f5;
-  padding: 5px;
-  padding-top: 50px;
+  padding: 20px;
+  padding-top: 10px;
   margin-left: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
   border-radius: 30px;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
 }
-
 .SidebarItem {
   color: white;
   text-align: center;
@@ -34,62 +34,55 @@ body {
 }
 
 .w3-bar {
-  background-color: rgb(255, 255, 255);
-  height: 50px;
-  width: 90vw;
-  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+  padding-right: 30px;
+  
+  border-radius: 10px;
   margin-top: 10px;
   margin-left: 10px;
-  margin-right: 20px;
+  
 }
-
-.content-container {
-  display: flex;
-  flex-direction: column;
-  flex: 1; /* Take up the remaining space */
-}
-
 .main-content {
-  display: flex; 
-  flex :1;/* Take up the remaining space */
-  margin: 20px;
-
-  background-color: white;
+  /* Set your desired fixed width */
+   /* Center the content */
+   margin: 10px;
+  display: flex;
+  
+  
 }
+
 .left-section {
-  flex: 65%; /* Takes up 60% of the available space */
-  padding: 20px; /* Adjust as needed */
-  background-color: #e58d8d; 
-  margin-right: 10px;
-  border: 20px; 
-  border-color: black;
-  border-radius: 20px;/* Optional: Set background color */
+  width: 65%; /* Set the fixed width for the left section */
+  
+  padding: 10px;
+  background-color: #e58d8d;
+  
+  
+  border-radius: 20px;
+   /* Include padding and border in the total width */
 }
 
 .right-section {
-  flex: 35%; /* Takes up 40% of the available space */
-  padding: 20px;
+  /* Set the fixed width for the right section */
+  width: 30%;
+  position: relative;
   border-radius: 20px;
-  margin-right: 10px; /* Adjust as needed */
-  background-color: #f5f5f5;
-  border: 20px; 
-  border-color: black;/* Optional: Set background color */
-}
-.weather-section {
-
-  height: 200px;
-  width: 100%;
   
-  background-color: aquamarine;
+  
+  
+  
+   /* Include padding and border in the total width */
+}
+
+.weather-section {
+  height: 200px;
+  width: 50%;
+  
+  padding: 10px;
   justify-content: center;
   text-align: center;
-}
-.left-section {
-  flex: 65%;
-  padding: 20px;
-  background-color: #e58d8d;
-  margin-right: 10px;
-  border-radius: 20px;
 }
 
 .left-section .header {
@@ -107,33 +100,35 @@ body {
 }
 
 .left-section .scrollable-section {
-  height: 150px;
-  overflow-x: auto;
-  flex-direction: row; /* Change from row to column */
-  align-items: flex-start; /* Align items to the start */
-  margin-top: 20px;
-  border-radius: 10px;
+  height: auto;
+  
+  flex-direction: row;
+  align-items: flex-start;
+  
+  margin-top: 10px;
+  
   padding: 10px;
-  flex-grow: 1; /* Allow the container to grow vertically */
+  
 }
-.rooms {
 
+.rooms {
   margin: 10px;
   margin-top: 20px;
   padding: 5px;
 }
+
 .rooms .scrollable-section {
   display: flex;
-  overflow-x: auto;
+  overflow-x: scroll;
   padding: 10px;
   align-items: center;
 }
 
 .card {
-  min-height: 120px; /* Use min-height instead of height */
-  min-width: 160px; /* Specify min-width for consistency */
+  min-height: 120px;
+  min-width: 160px;
   margin-right: 10px;
-  margin-bottom: 10px; /* Add margin-bottom to create space between rows */
+  margin-bottom: 10px;
   background-color: #f5f5f5;
   border-radius: 10px;
   display: flex;
@@ -147,12 +142,13 @@ body {
   position: absolute;
   top: 10px;
   left: 10px;
-  
 }
+
 .color-switch {
   position: absolute;
   top: 10px;
   left: 10px;
+  
 }
 
 .color-switch-text {
@@ -164,29 +160,79 @@ body {
 }
 
 .card-content {
-  
-  
-   /* Align items to the left */
-  /* Allow content to grow and push switch to the bottom */
 }
 
 .device-name {
- position: absolute;
- top: 80px;
- left: 10px;
+  position: absolute;
+  top: 80px;
+  left: 10px;
   color: #7c41f5;
-  
 }
 
 .device-icon {
   position: absolute;
-  top: 30px;
- left: 50px;
-  
+  top: 20px;
+  left: 10px;
 }
 
 .switch-container {
   position: absolute;
   bottom: 30px;
   right: 10px;
+  color: #7c41f5;
+}
+.control-panel {
+  border-radius: 10px;
+  width: 800px;
+  height: 400px;
+}
+.card.selected-card {
+  background-color: #7c41f5;
+  color: white; /* Set the text color to contrast with the background */
+}
+.device-name.selected-text {
+  color: white;
+}
+
+.device-icon.selected-icon {
+  color: white;
+}
+
+
+/* App.css */
+
+.MyDevicesPaper {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  
+}
+
+.MyDevicesHeader {
+  height: 100px;
+  width: 100%;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.dropdown {
+  width: 80px;
+  margin-right: 20px;
+}
+s
+.CardsContainer {
+  
+  padding: 10px;
+  height: auto;
+padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+/* Define styles for your Card component here */
+.Card {
+  width: 160px;
+  height: 80px;
+  /* Additional styling for your cards */
 }

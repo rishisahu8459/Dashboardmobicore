@@ -1,0 +1,32 @@
+/* Users.css */
+
+.UsersContainer {
+    width: 100%;
+    height: 130px;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .UserItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Avatar {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+    border: 2px solid #fff; /* Add a border to the avatar */
+  }
+  
+  .UserName {
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+  
+  .UserRole {
+    color: #555;
+  }
+  
