@@ -9,13 +9,22 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 import DevicesIcon from '@mui/icons-material/Devices';
-import AcUnitIcon from '@mui/icons-material/AcUnit';
+import AcUnitIcon from '../icons/air-conditioner.png';
 import TvIcon from '@mui/icons-material/Tv';
-import KitchenIcon from '@mui/icons-material/Kitchen';
-import FanIcon from '@mui/icons-material/Air';
+
+import FanIcon from '../icons/ceiling-fan.png';
 import CoffeeMakerIcon from '@mui/icons-material/Coffee';
 import MicrowaveIcon from '@mui/icons-material/Microwave';
 import WaterDropIcon from '@mui/icons-material/WaterDrop';
+
+import RefrigeratorIcon from '../icons/refrigerator.png';
+import LightsIcon from '../icons/hang-lamp.png';
+import WashingMachineIcon from '../icons/washing-machine.png';
+import LampIcon from '../icons/floor-lamp.png';
+import AirPurifierIcon from '../icons/air-purifier.png';
+import AlarmClockIcon from '../icons/alarm-clock.png';
+import ToasterIcon from '../icons/toaster.png';
+import CeilingLampIcon from '../icons/led-bulb.png';
 
 const mockData = {
   livingRoom: ['Refrigerator', 'Smart AC', 'Lights', 'Fan', 'Washing machine', 'Lamp', 'Air Purifier', 'TV', 'Alarm Clock'],
@@ -24,14 +33,20 @@ const mockData = {
 };
 
 const deviceIcons = {
-  'Smart AC': <AcUnitIcon />,
+  'Smart AC': <img src={AcUnitIcon} alt="Air Purifier" />,
   'TV': <TvIcon />,
-  'Lamp': <TvIcon />,
-  'Fan': <FanIcon />,
+  'Fan': <img src={FanIcon} alt={DevicesIcon} />,
   'Coffee Maker': <CoffeeMakerIcon />,
   'Microwave': <MicrowaveIcon />,
   'Water Purifier': <WaterDropIcon />,
-  'Refrigerator' : <KitchenIcon/>,
+  'Refrigerator': <img src={RefrigeratorIcon} alt="Refrigerator" />,
+  'Lights': <img src={LightsIcon} alt="Lights" />,
+  'Washing machine': <img src={WashingMachineIcon} alt="Washing machine" />,
+  'Lamp': <img src={LampIcon} alt="Lamp" />,
+  'Air Purifier': <img src={AirPurifierIcon} alt="Air Purifier" />,
+  'Alarm Clock': <img src={AlarmClockIcon} alt="Alarm Clock" />,
+  'Toaster': <img src={ToasterIcon} alt="Toaster" />,
+  'Ceiling Lamp': <img src={CeilingLampIcon} alt="Ceiling Lamp" />, // Added for 'Ceiling Lamp'
   // Add more mappings as needed
 };
 
