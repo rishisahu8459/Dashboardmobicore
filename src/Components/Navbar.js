@@ -46,7 +46,7 @@ function Navbar() {
 
   return (
     <div className='w3-bar' >
-     <Box  display="flex" borderRadius={3} borderColor={'black'} border={1}>
+     <Box  display="flex" minWidth={500} borderRadius={3} borderColor={'black'} border={1}>
      <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
      <IconButton type="button" sx={{ p: 1 }}>
           <SearchIcon />

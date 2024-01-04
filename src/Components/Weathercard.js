@@ -105,28 +105,26 @@ export default function Weathercard() {
     <MDBContainer className="weater-section">
       <MDBRow className=" align-items-center h-100">
         <MDBCol md="9" lg="7" xl="5">
-          <MDBCard
-            className="text-white bg-image shadow-4-strong"
-            style={{
-                width: "800px",
-                height: "200px",
-              backgroundImage: bgGif ?? "url(https://mdbgo.io/ascensus/mdb-advanced/img/clouds.gif)"
-            }}
-          >
-            <MDBCardHeader className="p-4 border-0">
-              <div className="text-center mb-3">
-                <p className="h2 mb-1">{NAME}</p>
-                <p className="mb-1">{description}</p>
-                <p >{temp}°C</p>
-                <span className="">Pressure: {pressure}</span>
-                <span className="mx-2">|</span>
-                <span className="">Humidity: {humidity}%</span>
-              </div>
-            </MDBCardHeader>
-
-
-           
-          </MDBCard>
+        <MDBCard
+  className="text-white bg-image shadow-4-strong"
+  style={{
+    width: "800px",
+    height: "200px",
+    backgroundImage: bgGif ?? "url(https://mdbgo.io/ascensus/mdb-advanced/img/clouds.gif)",
+    backgroundSize: "cover", // Set background size to cover the entire container
+  }}
+>
+  <MDBCardHeader className="p-4 border-0">
+    <div className="text-center mb-3">
+      <p className="h2 mb-1">{NAME}</p>
+      <p className="mb-1">{description}</p>
+      <p>{temp}°C</p>
+      <span className="">Pressure: {pressure}</span>
+      <span className="mx-2">|</span>
+      <span className="">Humidity: {humidity}%</span>
+    </div>
+  </MDBCardHeader>
+</MDBCard>
         </MDBCol>
       </MDBRow>
     </MDBContainer>

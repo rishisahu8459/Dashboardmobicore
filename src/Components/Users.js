@@ -19,7 +19,8 @@ const Users = () => {
   ];
 
   return (
-    <Paper elevation={3} className="UsersContainer">
+    <div className="UsersContainer" >
+      <Typography variant='h6' >Members</Typography>
       <Grid container spacing={2}>
         {users.map((user) => (
           <Grid item key={user.id}>
@@ -35,7 +36,7 @@ const Users = () => {
           </Grid>
         ))}
       </Grid>
-    </Paper>
+    </div>
   );
 };
 

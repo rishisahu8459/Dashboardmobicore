@@ -1,5 +1,3 @@
-// MyDevices.js
-
 import React, { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
@@ -29,9 +27,9 @@ const MyDevices = () => {
   ];
 
   return (
-    <Paper elevation={3} className="MyDevicesPaper">
-      <div className="MyDevicesHeader">
-        <Typography variant="h5" marginLeft={3}>
+    <div  className="MyDevicesPaper">
+      <div className="MyDevicesHeader" >
+        <Typography variant="h5" marginLeft={1}>
           My Devices
         </Typography>
 
@@ -48,16 +46,17 @@ const MyDevices = () => {
         </FormControl>
       </div>
 
-      <div className="CardsContainer" >
-        <Grid container spacing={2} columnSpacing={4} justifyContent="center" color={'white'}>
-          {cards.map((card) => (
-            <Grid item key={card.id}>
-              <Card title={card.title} />
-            </Grid>
-          ))}
-        </Grid>
+      <div className="CardsContainer" style={{ overflowX: 'hidden' }}>
+      <Grid container spacing={2} columnSpacing={{ xs: 2, sm: 4, md: 6 }}>
+  {cards.map((card) => (
+    <Grid item key={card.id} xs={6} sm={6} md={6}>
+      <Card title={card.title} />
+    </Grid>
+  ))}
+</Grid>
+
       </div>
-    </Paper>
+    </div>
   );
 };
 

@@ -3,6 +3,8 @@
   
   display: flex;
   position: relative;
+  overflow: hidden;
+  
   
   
 }
@@ -14,8 +16,9 @@
 
 .Sidebar {
   
-  
- 
+  width: 100px;
+  display: flex;
+  flex-direction: column;
   color: #ffffff;
   background-color: #7c41f5;
   padding: 20px;
@@ -25,7 +28,7 @@
   margin-bottom: 20px;
   border-radius: 30px;
   align-items: center;
-  justify-content: space-between;
+  
 }
 .SidebarItem {
   color: white;
@@ -57,7 +60,7 @@
   width: 65%; /* Set the fixed width for the left section */
   
   padding: 10px;
-  background-color: #e58d8d;
+  background-color: #f5f5f5;
   
   
   border-radius: 20px;
@@ -69,7 +72,8 @@
   width: 30%;
   position: relative;
   border-radius: 20px;
-  
+  background-color: #f5f5f5;
+  padding: 20px;
   
   
   
@@ -119,9 +123,17 @@
 
 .rooms .scrollable-section {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
   padding: 10px;
   align-items: center;
+}
+
+.rooms .scrollable-section::-webkit-scrollbar {
+  /* WebKit browsers like Chrome and Safari */
+  width: 0;
+  height: 0;
 }
 
 .card {
@@ -164,14 +176,14 @@
 
 .device-name {
   position: absolute;
-  top: 80px;
+  bottom: 10px;
   left: 10px;
   color: #7c41f5;
 }
 
 .device-icon {
   position: absolute;
-  top: 20px;
+  top: 12px;
   left: 10px;
 }
 
@@ -184,7 +196,8 @@
 .control-panel {
   border-radius: 10px;
   width: 800px;
-  height: 400px;
+  height: 380px;
+  
 }
 .card.selected-card {
   background-color: #7c41f5;
@@ -202,37 +215,46 @@
 /* App.css */
 
 .MyDevicesPaper {
-  width: 100%;
-  height: auto;
+  width: 90%;
+  background-color: rgb(255, 255, 255);
   padding: 10px;
-  
+  border-radius: 20px;
 }
 
 .MyDevicesHeader {
-  height: 100px;
+  height: 15%;
   width: 100%;
-  margin: 5px;
+  margin: 10px;
   display: flex;
+  align-items: center;
+  border-radius: 20px;
   justify-content: space-between;
-  
 }
 
 .dropdown {
   width: 80px;
   margin-right: 20px;
 }
-s
+
 .CardsContainer {
-  
-  padding: 10px;
-  height: auto;
-padding-left: 10px;
-  margin-bottom: 10px;
+  max-height: calc(2 * (110px + 8px) + 8px); /* Max height for 2 rows */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
 }
 
-/* Define styles for your Card component here */
-.Card {
-  width: 160px;
-  height: 80px;
-  /* Additional styling for your cards */
+/* Hide the scrollbar for WebKit browsers (Chrome, Safari) */
+.CardsContainer::-webkit-scrollbar {
+  width: 0;
+  background: transparent; /* Optional: Make the scrollbar area transparent */
 }
+
+/* Optional: If you want to hide the scrollbar for Firefox */
+.CardsContainer {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent; /* Optional: Make the scrollbar area transparent */
+}
+
+/* Optional: If you want to hide the scrollbar for IE and Edge */
+.CardsContainer {
+  -ms-overflow-style: none;
+}
+/* Define styles for your Card component here */

@@ -7,6 +7,8 @@ import MyDevices from './MyDevices';
 import Users from './Users';
 import LineChart from './LineChart';
 import Weathercard from './Weathercard';
+import ControlPanel from './ControlPanel';
+
 
 
 
@@ -23,13 +25,13 @@ const HomeContainer = () => {
         <div>
           <Rooms/>
         </div>
-        <Paper elevation={3} className='control-panel'>
-         
-        </Paper>
+        <Paper className='control-panel' elevation={3}>
+          <ControlPanel/>
+          </Paper>
       </Paper>
       <div className='right-section'>
-         <MyDevices/>
-         <Users/>
+      <MyDevices />
+         <Users />
        
       </div>
     </div>
