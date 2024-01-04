@@ -160,6 +160,7 @@
   position: absolute;
   top: 10px;
   left: 10px;
+ 
   
 }
 
@@ -183,7 +184,8 @@
 
 .device-icon {
   position: absolute;
-  top: 12px;
+  color: #7c41f5;
+  top: 30px;
   left: 10px;
 }
 

@@ -4,27 +4,46 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import DevicesIcon from '@mui/icons-material/Devices';
 import Switch from '@mui/material/Switch';
 import Menu from '@mui/material/Menu';
-import WaterDropIcon from '@mui/icons-material/WaterDrop';
-import MenuItem from '@mui/material/MenuItem'; // Add this import
+import MenuItem from '@mui/material/MenuItem';
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
+import DevicesIcon from '@mui/icons-material/Devices';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
+import TvIcon from '@mui/icons-material/Tv';
+import KitchenIcon from '@mui/icons-material/Kitchen';
+import FanIcon from '@mui/icons-material/Air';
+import CoffeeMakerIcon from '@mui/icons-material/Coffee';
+import MicrowaveIcon from '@mui/icons-material/Microwave';
+import WaterDropIcon from '@mui/icons-material/WaterDrop';
+
 const mockData = {
   livingRoom: ['Refrigerator', 'Smart AC', 'Lights', 'Fan', 'Washing machine', 'Lamp', 'Air Purifier', 'TV', 'Alarm Clock'],
   bedRoom: ['Lamp', 'Air Purifier', 'TV', 'Alarm Clock'],
   kitchen: ['Microwave', 'Coffee Maker', 'Toaster'],
 };
 
+const deviceIcons = {
+  'Smart AC': <AcUnitIcon />,
+  'TV': <TvIcon />,
+  'Lamp': <TvIcon />,
+  'Fan': <FanIcon />,
+  'Coffee Maker': <CoffeeMakerIcon />,
+  'Microwave': <MicrowaveIcon />,
+  'Water Purifier': <WaterDropIcon />,
+  'Refrigerator' : <KitchenIcon/>,
+  // Add more mappings as needed
+};
+
 const Rooms = () => {
   const [selectedRoom, setSelectedRoom] = useState('livingRoom');
   const [selectedCard, setSelectedCard] = useState(null);
-  const [anchorEl, setAnchorEl] = useState(null); // Add this line
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleRoomChange = (room) => {
     setSelectedRoom(room);
     setSelectedCard(null);
-    handleMenuClose(); // Close the menu when a room is selected
+    handleMenuClose();
   };
 
   const handleCardClick = (index) => {
@@ -45,20 +64,17 @@ const Rooms = () => {
         <Typography variant="h6">{`User's Home`}</Typography>
         <div className='humidity'>
           <IconButton>
-            {/* Icon for humidity */}
-            <WaterDropIcon/>
+            <WaterDropIcon />
           </IconButton>
           <Typography variant="body2">Humidity: 70%</Typography>
         </div>
         <div className='temperature'>
           <IconButton>
-            {/* Icon for temperature */}
-            <DeviceThermostatIcon/>
+            <DeviceThermostatIcon />
           </IconButton>
           <Typography variant="body2">Temperature: 25°C</Typography>
         </div>
         <div className='dropdown'>
-          {/* Dropdown menu for rooms */}
           <Typography variant="body2" style={{ marginRight: '8px' }}>
             {selectedRoom === 'livingRoom' ? 'Living Room' : selectedRoom === 'bedRoom' ? 'Bed Room' : 'Kitchen'}
           </Typography>
@@ -107,13 +123,12 @@ const Card = ({ device, isSelected, onClick }) => {
         </Typography>
         <div className='device-icon'>
           <IconButton>
-            {/* Icon based on device name */}
-            <DevicesIcon className={`device-icon ${isSelected ? 'selected-icon' : ''}`} />
+            {deviceIcons[device] || <DevicesIcon className={`device-icon ${isSelected ? 'selected-icon' : ''}`} />}
           </IconButton>
         </div>
       </div>
       <div className='switch-container'>
-        <Switch  checked={isSwitchOn} onChange={handleSwitchChange} />
+        <Switch checked={isSwitchOn} onChange={handleSwitchChange} />
       </div>
     </div>
   );
