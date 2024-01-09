@@ -1,0 +1,20 @@
+/* SingleButton.css */
+
+.SingleButton {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .room-info {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+.big-device-icon{
+    margin-top: 30px;
+}

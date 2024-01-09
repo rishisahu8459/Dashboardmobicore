@@ -1,0 +1,38 @@
+/* ThreeButton.css */
+.ThreeButton {
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+  }
+  
+  .room-info {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    
+    justify-content: space-between;
+  }
+  
+  
+  .icon-container {
+    margin-right: 20px; /* Adjust the margin as needed */
+  }
+  
+  .switches-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .switch-item {
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+  
+  /* Add more styles as needed */
+  
+  .big-device-icon{
+    margin-top: 30px;
+}

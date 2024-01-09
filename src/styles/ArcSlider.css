@@ -1,0 +1,41 @@
+/* ArcSlider.css */
+
+.ArcSlider {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .room-info {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .slider-value {
+    position: absolute;
+    top: 50%;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .switch-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .icon-button {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+    margin: 5px;
+  }
+  
+  .circular-slider-container {
+    margin-top: 20px;
+  }
+  
